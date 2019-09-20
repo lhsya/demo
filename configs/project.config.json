@@ -1,0 +1,12 @@
+{
+  "adamtest": {
+    "itemName": "adamtest",
+    "frame": "react",
+    "cssProcessor": "less",
+    "ts": false,
+    "isSsrItem": false,
+    "tplEngine": "none",
+    "entryCssExt": "less",
+    "entryJsExt": "js"
+  }
+}

@@ -1,0 +1,24 @@
+<script>
+    (function(){
+        var docElem = document.documentElement;
+        var dpr = window.devicePixelRatio || 1;
+        var Layout = {
+            w: 750,
+            h: 1334,
+            n: 16
+        };
+
+        function setRem () {
+            //设置根字体大小
+            document.getElementsByTagName("html")[0].style.fontSize=document.documentElement.clientWidth / 16 + 'px';
+        };
+        setRem();
+
+        window.addEventListener('resize', setRem);
+        window.addEventListener('pageshow', function (e) {
+            if (e.persisted) {
+                setRem()
+            }
+        });
+    })();
+</script>

@@ -1,0 +1,89 @@
+.toast-notice {
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    width: 260PX;
+    margin-left: -130PX;
+    padding: 10PX 20PX;
+    border-radius: 20PX;
+    text-align: center;
+    color: #fff;
+    font-size: 14PX;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+    overflow: hidden;
+    // white-space: nowrap;
+    // text-overflow: ellipsis;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+    animation-name: bounceInUp;
+    box-sizing: border-box;
+    line-height: 1.5;
+
+    div {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all;
+    }
+}
+
+
+@-webkit-keyframes bounceInUp {
+    0%,60%,75%,90%,to {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1)
+    }
+
+    0% {
+        opacity: 0;
+        transform: translate3d(0,3000px,0)
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(0,-20px,0)
+    }
+
+    75% {
+        transform: translate3d(0,10px,0)
+    }
+
+    90% {
+        transform: translate3d(0,-5px,0)
+    }
+
+    to {
+        transform: translateZ(0)
+    }
+}
+
+@keyframes bounceInUp {
+    0%,60%,75%,90%,to {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1)
+    }
+
+    0% {
+        opacity: 0;
+        transform: translate3d(0,3000px,0)
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(0,-20px,0)
+    }
+
+    75% {
+        transform: translate3d(0,10px,0)
+    }
+
+    90% {
+        transform: translate3d(0,-5px,0)
+    }
+
+    to {
+        transform: translateZ(0)
+    }
+}

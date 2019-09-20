@@ -1,0 +1,93 @@
+
+
+@pullMsg: "下拉刷新";
+@pulldownMsg: "松开刷新";
+@refreshingMsg: "正在刷新...";
+@refreshedMsg: "刷新成功";
+
+.pullrefresh {
+  font-size: 28px;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.00) 100%);
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  &__msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 22PX 0 57PX 0; 
+  }
+
+  &__body {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__icon {
+    display: block;
+    margin: 0 10PX 0 0;
+  }
+
+  &.init {
+    .pullrefresh__msg:after {
+      content: @pullMsg
+    }
+  }
+  &.pull {
+    .pullrefresh__msg:after {
+      content: @pullMsg
+    }
+  }
+  &.pulldown {
+    .pullrefresh__msg:after {
+      content: @pulldownMsg
+    }
+  }
+  &.refreshing {
+    .pullrefresh__msg:after {
+      content: @refreshingMsg
+    }
+    .pullrefresh__icon {
+      display: block;
+      width: 28px;
+      height: 28px;
+      background: url(../assets/loading-circle.png) no-repeat center;
+      background-size: 28px 28px;
+      animation: circle 2s infinite linear;
+      -webkit-animation: circle 2s infinite linear;
+    }
+  }
+  &.refreshed {
+    .pullrefresh__msg:after {
+      content: @refreshedMsg
+    }
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
